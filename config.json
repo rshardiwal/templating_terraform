@@ -1,0 +1,5 @@
+
+{
+    "template_dir": "terraform_templates",
+    "output_dir": "terraform_scripts"
+}
