@@ -1,5 +1,6 @@
 from flask import Blueprint, Response
 from flask_cors import CORS
+import logging
 
 from utils import get_directory_path, get_output_path, process_template, read_config
 
@@ -38,5 +39,5 @@ def create_script():
 def generate_terraform_script(template_path, final_script_path, variables):
     # Process template
     output_filename = process_template(template_path, final_script_path, variables)
-    print(f'Terraform script generated at {output_filename})')
+    logging.info(f'Terraform script generated at {output_filename})')
     return final_script_path

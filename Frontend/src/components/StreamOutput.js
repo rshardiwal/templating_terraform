@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const StreamOutput = ({ url }) => {
   const [lines, setLines] = useState([]);
-console.log('i am here', url);
+
   useEffect(() => {
     console.log('in side use effect');
     const eventSource = new EventSource(url);
@@ -13,7 +13,7 @@ console.log('i am here', url);
 
     eventSource.onmessage = (event) => {
       console.log('New message:', event.data);
-      setLines((prevLines) => [...prevLines, event.data]);
+      setLines((prevLines) => [event.data, ...prevLines]); // Prepend new lines
     };
 
     eventSource.onerror = (err) => {
