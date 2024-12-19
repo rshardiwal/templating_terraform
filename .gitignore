@@ -1,2 +1,3 @@
- __pycache__/
- terraform_scripts/*.*
+__pycache__/
+terraform_scripts/*.*
+Frontend/node_modules/*
